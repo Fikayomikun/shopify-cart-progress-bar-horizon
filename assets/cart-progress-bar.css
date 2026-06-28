@@ -1,0 +1,37 @@
+.progress-message{
+    text-align: right;
+    font-size: 14px;
+    line-height: 3;
+    border-bottom: 1px solid #E2E4E3;
+}
+
+
+.cart-progress-bar {
+    position: relative;
+    width: 100%;
+    border-radius: .75em;
+  }
+
+  .cart-progress {  
+    border-radius: 0.75em;
+    height: 8px;
+    transition: width 0.45s, background-color 0.3s ease-in-out;
+    width: 100%
+  }
+
+  .free-shipping-icon {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: -4px;
+    justify-content: center;    
+    align-items: center;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 20px;
+    background-color: #E2E4E3;
+    font-size: 1.2rem;
+  }

@@ -1,0 +1,55 @@
+{{ 'cart-progress-bar.css' | asset_url | stylesheet_tag }}
+{% assign cart_goal = settings.minimum_free_shipping_amount | times: 100 %}
+{% assign cart_total = cart.total_price %}
+{% assign progress_percentage = cart_total | times: 100 | divided_by: cart_goal %}
+
+{% if progress_percentage > 100 %}
+  {% assign progress_percentage = 100 %}
+{% endif %}
+
+
+<div class="cart-shipping-progress">
+
+  <div class="cart-progress-bar">
+    <div class="cart-progress{%if progress_percentage == 100 %} is-complete{% endif %}"></div>
+    <div class="free-shipping-icon{%if progress_percentage == 100 %} is-complete{% endif %}">
+      <span>🚚</span>
+    </div>
+  </div>
+
+  <p class="progress-message{%if progress_percentage == 100 %} is-complete{% endif %}">
+    {{ settings.shipping_progress_bar_text }}
+  </p>
+
+</div>
+
+<style>
+
+  .cart-shipping-progress {
+    padding: var(--theme-drawer-padding);
+  }
+
+  .cart-progress-bar {
+    background-color: {{ settings.background_bar_color }};
+  }
+
+  .progress-message {
+    color: {{ settings.progress_message_color }}
+  }
+
+  .cart-progress {
+    width: {{ progress_percentage }}%;
+    background-color: {{ settings.progress_bar_color }};
+  }
+
+  .cart-progress.is-complete,
+  .free-shipping-icon.is-complete {
+    background-color: {{ settings.completed_bar_color }};
+  }
+
+  .progress-message.is-complete {
+    color: {{ settings.completed_bar_color }};
+  }
+
+
+</style>

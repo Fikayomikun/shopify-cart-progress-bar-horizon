@@ -1478,6 +1478,38 @@
         ],
         "default": "page"
       },
+       {
+        "type": "text",
+        "id": "shipping_progress_bar_text",
+        "label": "Free shipping progress bar text",
+         "default": "Free shipping on orders over $25"
+      },
+      {
+        "type":"number",
+        "id":"minimum_free_shipping_amount",
+        "label":"Free Shipping Amount",
+        "default":25
+      },
+      {
+        "type": "color",
+        "id": "background_bar_color",
+        "label": "Color for Background Bar"
+      },
+       {
+        "type": "color",
+        "id": "progress_message_color",
+        "label": "Color for Message"
+      },
+      {
+        "type": "color",
+        "id": "progress_bar_color",
+        "label": "Color for Progress Bar"
+      },
+       {
+        "type": "color",
+        "id": "completed_bar_color",
+        "label": "Color for Completed Bar"
+      },
       {
         "type": "select",
         "id": "product_title_case",
