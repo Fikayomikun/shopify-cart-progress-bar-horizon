@@ -121,6 +121,9 @@
               </scroll-hint>
             {%- endif -%}
           {% endcapture %}
+        {% if cart.item_count > 0 %}
+          {% render 'cart-progress-bar' %}
+        {% endif %}
           {% render 'cart-items-component',
             children: cart_items_children,
             is_drawer: true,
